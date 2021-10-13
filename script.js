@@ -16,8 +16,33 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function finalMessage() {
+    if (playerScore < computerScore) {
+        console.log(loseMessage);
+    } else if (playerScore > computerScore) {
+        console.log(winMessage);
+    } else {
+        console.log(tieMessage);
+    }
+}
+
 function game() {
-    
+    function playRound(playerSelection, computerSelection) {
+        console.log("Player score is " + playerScore + ".", "Computer score is " + computerScore + ".");
+    }
+    function playRound(playerSelection, computerSelection) {
+        console.log("Player score is " + playerScore + ".", "Computer score is " + computerScore + ".");
+    }
+    function playRound(playerSelection, computerSelection) {
+        console.log("Player score is " + playerScore + ".", "Computer score is " + computerScore + ".");
+    }
+    function playRound(playerSelection, computerSelection) {
+        console.log("Player score is " + playerScore + ".", "Computer score is " + computerScore + ".");
+    }
+    function playRound(playerSelection, computerSelection) {
+        console.log("Player score is " + playerScore + ".", "Computer score is " + computerScore + ".");
+    }
+
 }
 
 let playerScore = 0;
@@ -25,7 +50,10 @@ let computerScore = 0;
 let win = "You won! Rock beats Scissor.";
 let lose = "You lost! Paper beats Rock.";
 let tie = "It's a tie! Rock does not beat Rock.";
+let winMessage = "You beat the computer!";
+let loseMessage = "You lost to the computer!";
+let tieMessage = "It is a tie. No one won!";
 const playerSelection = 'Rock';
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
-console.log("Player score is " + playerScore + ".", "Computer score is " + computerScore + ".");
+
