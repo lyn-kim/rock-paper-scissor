@@ -5,19 +5,29 @@ function computerPlay() {
     return randomMove;
 };
 
+//input from player
+function userChoice() {
+    userInput = userInput.toLowerCase();
+    while (userInput !== "rock") {
+        alert("Invalid Option");
+        userInput = window.prompt("Rock, Paper or Scissor?");
+    }
+}
+
 //single round of game
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection, computerPlay() === 'Paper') {
+    if (userChoice(), computerPlay() === "Paper") {
         computerScore++;
         return lose;
-    } else if (playerSelection, computerPlay() === 'Rock') {
+    } else if (userChoice(), computerPlay() === "Rock") {
         return tie;
-    } else { 
+    } else {
         playerScore++;
         return win;
     }
 }
 
+//end of game message
 function finalMessage() {
     if (playerScore < computerScore) {
         console.log(loseMessage);
@@ -31,12 +41,13 @@ function finalMessage() {
 //five rounds of game
 function game() {
     for (let i = 0; i <= 4; i++) {
-        let round = playRound();
+        console.log(playRound());
         console.log("Your Score: " + playerScore, "Opponent Score: " + computerScore);
     }
     return finalMessage();
 }
 
+let userInput = window.prompt("Rock, Paper or Scissor?");
 let playerScore = 0;
 let computerScore = 0;
 let win = "You won! Rock beats Scissor.";
@@ -45,7 +56,6 @@ let tie = "It's a tie! Rock does not beat Rock.";
 let winMessage = "You beat the computer!";
 let loseMessage = "You lost to the computer!";
 let tieMessage = "It is a tie. No one won!";
-const playerSelection = 'Rock';
+const playerSelection = "rock";
 const computerSelection = computerPlay();
 console.log(game());
-
