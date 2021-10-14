@@ -27,22 +27,16 @@ function finalMessage() {
 }
 
 function game() {
-    function playRound(playerSelection, computerSelection) {
-        console.log("Player score is " + playerScore + ".", "Computer score is " + computerScore + ".");
+    for (let i = 0; i <= 5; i++) {
+        if (playerScore < computerScore) {
+            console.log(loseMessage);
+        } else if (playerScore > computerScore) {
+            console.log(winMessage);
+        } else {
+            console.log(tieMessage);
+        }
     }
-    function playRound(playerSelection, computerSelection) {
-        console.log("Player score is " + playerScore + ".", "Computer score is " + computerScore + ".");
-    }
-    function playRound(playerSelection, computerSelection) {
-        console.log("Player score is " + playerScore + ".", "Computer score is " + computerScore + ".");
-    }
-    function playRound(playerSelection, computerSelection) {
-        console.log("Player score is " + playerScore + ".", "Computer score is " + computerScore + ".");
-    }
-    function playRound(playerSelection, computerSelection) {
-        console.log("Player score is " + playerScore + ".", "Computer score is " + computerScore + ".");
-    }
-
+    return finalMessage();
 }
 
 let playerScore = 0;
@@ -55,5 +49,5 @@ let loseMessage = "You lost to the computer!";
 let tieMessage = "It is a tie. No one won!";
 const playerSelection = 'Rock';
 const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+console.log(game());
 
