@@ -1,9 +1,11 @@
+//computer's random choice generator
 function computerPlay() {
     let move = ['Rock', 'Paper', 'Scissor'];
     let randomMove = move[Math.floor(Math.random() * move.length)];
     return randomMove;
 };
 
+//single round of game
 function playRound(playerSelection, computerSelection) {
     if (playerSelection, computerPlay() === 'Paper') {
         computerScore++;
@@ -26,15 +28,11 @@ function finalMessage() {
     }
 }
 
+//five rounds of game
 function game() {
-    for (let i = 0; i <= 5; i++) {
-        if (playerScore < computerScore) {
-            console.log(loseMessage);
-        } else if (playerScore > computerScore) {
-            console.log(winMessage);
-        } else {
-            console.log(tieMessage);
-        }
+    for (let i = 0; i <= 4; i++) {
+        let round = playRound();
+        console.log("Your Score: " + playerScore, "Opponent Score: " + computerScore);
     }
     return finalMessage();
 }
