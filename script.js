@@ -7,18 +7,15 @@ function computerPlay() {
 
 //single round of game
 function playRound() {
-    let userInput = prompt("Rock, Paper or Scissor?").toLowerCase();
-    console.log(userInput);
-
-    if (userInput === computerPlay()) {
-        return tie;
-    } else if (userInput === "rock" && computerPlay() === "Scissor" || userInput === "paper" && computerPlay() === "Rock" || userInput === "scissor" && computerPlay() === "Paper") {
-        playerScore++;
-        return win;
-    } else (userInput === "rock" && computerPlay() === "Paper" || userInput === "paper" && computerPlay() === "Scissor" || userInput === "scissor" && computerPlay() === "Rock"); {
-        computerScore++;
-        return lose;
-    }
+    if (playerSelection === "Rock" && computerPlay() === "Scissor" || playerSelection === "Paper" && computerPlay() === "Rock" || playerSelection === "Scissor" && computerPlay() === "Paper") {
+    playerScore++;
+    return win;
+} else if (playerSelection === "Rock" && computerPlay() === "Paper" || playerSelection === "Paper" && computerPlay() === "Scissor" || playerSelection === "Scissor" && computerPlay() === "Rock") {
+    computerScore++;
+    return lose;
+} else {
+    return tie;
+}
 }
 
 //five rounds of game
@@ -41,14 +38,14 @@ function finalMessage() {
     }
 }
 
+let playerSelection = prompt("Rock, Paper or Scissor?");
+let computerSelection = computerPlay();
 let playerScore = 0;
 let computerScore = 0;
-let win = "You won! Rock beats Scissor.";
-let lose = "You lost! Paper beats Rock.";
-let tie = "It's a tie! Rock does not beat Rock.";
+let win = "You won! " + playerSelection + " beats " +  computerSelection + ".";
+let lose = "You lost! " + computerSelection + " beats " + playerSelection + ".";
+let tie = "It's a tie! " + playerSelection + " does not beat " + computerSelection + ".";
 let winMessage = "You beat the computer!";
 let loseMessage = "You lost to the computer!";
 let tieMessage = "It is a tie. No one won!";
-const playerSelection = ["rock", "paper", "scissor"];
-const computerSelection = computerPlay();
 console.log(game());
