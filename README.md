@@ -1,9 +1,9 @@
-Rock Paper Scissor game to play against the computer.
+The Odin Project - Rock Paper Scissor game (against the computer)
 
 My first game built from scratch!
 
 Log of steps taken:
-(using only JS - UI will be added during later parts of this curriculum 10/18/21)
+(using only JS - UI will be added during later parts of the curriculum 10/18/21)
 
 1. Linking js file with html document using script tag.
 2. Writing a function to choose a random move from an array.
